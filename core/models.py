@@ -19,7 +19,11 @@ class PortCall(models.Model):
 
 class BillOfLading(models.Model):
     port_call = models.ForeignKey(PortCall, on_delete=models.CASCADE)
+    shipper = models.CharField(max_length=100)
+    consignee = models.CharField(max_length=100)
     receiver = models.CharField(max_length=100)
+    notify_party = models.CharField(max_length=100)
+    description_of_cargo = models.TextField()
     quantity = models.IntegerField()
-    captain = models.CharField(max_length=100)
     destination = models.CharField(max_length=100)
+    master = models.CharField(max_length=100)
