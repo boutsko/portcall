@@ -22,3 +22,21 @@ class BillOfLadingViewSet(viewsets.ModelViewSet):
     queryset = BillOfLading.objects.all()
     serializer_class = BillOfLadingSerializer
 
+from django.shortcuts import get_object_or_404
+from rest_framework.views import APIView
+from .utilities import generate_bill_of_lading_pdf
+# from rest_framework.response import Response
+# from reportlab.pdfgen import canvas
+# from django.http import HttpResponse
+# from .models import BillOfLading
+#from .serializers import BillOfLadingSerializer
+
+class GeneratePDFView(APIView):
+    def get(self, request, *args, **kwargs):
+        bill_of_lading_id = kwargs.get('bill_of_lading_id')
+        bill_of_lading = get_object_or_404(BillOfLading, id=bill_of_lading_id)
+
+        pdf_response = generate_bill_of_lading_pdf(bill_of_lading)
+
+        return pdf_response
+
