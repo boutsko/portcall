@@ -1,0 +1,31 @@
+<!-- my_template.html -->
+<html>
+<head>
+    <title>My PDF File</title>
+</head>
+<body>
+    <h1>My PDF File</h1>
+    <p>This is a sample HTML template that will be converted to a PDF file.</p>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>City</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>John Doe</td>
+                <td>30</td>
+                <td>New York</td>
+            </tr>
+            <tr>
+                <td>Jane Doe</td>
+                <td>25</td>
+                <td>Los Angeles</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

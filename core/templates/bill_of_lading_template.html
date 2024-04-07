@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill of Lading</title>
+    <style>
+        /* Define your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section h2 {
+            margin-bottom: 10px;
+        }
+        .section table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .section table th, .section table td {
+            padding: 8px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="section">
+            <h2>Shipper Details</h2>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <td>{{ shipper_name }}</td>
+                </tr>
+                <tr>
+                    <th>Address</th>
+                    <td>{{ shipper_address }}</td>
+                </tr>
+                <!-- Add more shipper details as needed -->
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Consignee Details</h2>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <td>{{ consignee_name }}</td>
+                </tr>
+                <tr>
+                    <th>Address</th>
+                    <td>{{ consignee_address }}</td>
+                </tr>
+                <!-- Add more consignee details as needed -->
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Cargo Information</h2>
+            <table>
+                <tr>
+                    <th>Description</th>
+                    <td>{{ cargo_description }}</td>
+                </tr>
+                <tr>
+                    <th>Quantity</th>
+                    <td>{{ cargo_quantity }}</td>
+                </tr>
+                <!-- Add more cargo details as needed -->
+            </table>
+        </div>
+
+        <!-- Add more sections for other information like port details, master, etc. -->
+
+    </div>
+</body>
+</html>
