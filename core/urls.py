@@ -20,4 +20,5 @@ urlpatterns = [
     path('generate-pdf/<int:bill_of_lading_id>/', GeneratePDFView.as_view(), name='generate_pdf'),  # Specify URL pattern with bill_of_lading_id
     # path('pdf/', MyPDFView.as_view(), name='pdf_view'),
     path('example/', generate_example_pdf, name='example_view'),
+    path('generate-pdf1/', GeneratePDFView.as_view(), name='generate_pdf1'),
 ]

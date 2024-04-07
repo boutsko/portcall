@@ -103,3 +103,36 @@ def generate_example_pdf(request):
     response = HttpResponse(pdf_file, content_type='application/pdf')
     response['Content-Disposition'] = 'filename="output.pdf"'
     return response
+
+
+
+from django.http import HttpResponse
+from django.template.loader import get_template
+from django.template import Context
+from django.views import View
+from weasyprint import HTML
+
+class GeneratePDFView(View):
+    def get(self, request, *args, **kwargs):
+        # Get data or context to pass to the template
+        context_data = {
+            'shipper_name': 'John Doe',
+            'shipper_address': '123 Shipper St, Ship City',
+            'consignee_name': 'Jane Smith',
+            'consignee_address': '456 Consignee Ave, Consignee City',
+            'cargo_description': 'Goods description',
+            'cargo_quantity': 10,
+            # Add more data as needed
+        }
+
+        # Render the HTML template with context data
+        template = get_template('bill_of_lading_template.html')
+        html_content = template.render(context_data)
+
+        # Generate PDF using WeasyPrint
+        pdf_file = HTML(string=html_content, base_url=request.build_absolute_uri()).write_pdf()
+
+        # Create HTTP response with PDF content
+        response = HttpResponse(pdf_file, content_type='application/pdf')
+        response['Content-Disposition'] = 'filename="bill_of_lading.pdf"'
+        return response
