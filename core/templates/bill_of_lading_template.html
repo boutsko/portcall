@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill of Lading</title>
+    <style>
+      body {
+          font-family: Arial, sans-serif;
+          margin: 20px;
+      }
+      .section {
+          margin-bottom: 20px;
+      }
+      .section h2 {
+          margin-bottom: 10px;
+      }
+      .section table {
+          width: 100%;
+          border-collapse: collapse;
+      }
+      .section table th, .section table td {
+          padding: 8px;
+          border: 1px solid #ccc;
+      }
+      @media print {
+          .pb {
+              page-break-before: always;
+          }
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1 class="pb">FIRST ORIGINAL</h1>
+    <div class="section">
+      <h2>Consignee Details</h2>
+      <table>
+        <tr>
+          <th>Name</th>
+          <td>{{ consignee }}</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="section">
+      <h2>Receiver Details</h2>
+      <table>
+        <tr>
+          <th>Name</th>
+          <td>{{ receiver }}</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="section">
+      <h2>Notify Party Details</h2>
+      <table>
+        <tr>
+          <th>Name</th>
+          <td>{{ notify_party }}</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="section">
+      <h2>Cargo Information</h2>
+      <table>
+        <tr>
+          <th>Description</th>
+          <td>{{ description_of_cargo }}</td>
+        </tr>
+        <tr>
+          <th>Quantity</th>
+          <td>{{ quantity }}</td>
+        </tr>
+        <tr>
+          <th>Destination</th>
+          <td>{{ destination }}</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="section">
+      <h2>Master Details</h2>
+      <table>
+        <tr>
+          <th>Name</th>
+          <td>{{ master }}</td>
+        </tr>
+      </table>
+    </div>
+
+
+    <h1 class="pb">SECOND ORIGINAL</h1>
+    <div class="section">
+      <h2>Consignee Details</h2>
+      <table>
+        <tr>
+          <th>Name</th>
+          <td>{{ consignee }}</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="section">
+      <h2>Receiver Details</h2>
+      <table>
+        <tr>
+          <th>Name</th>
+          <td>{{ receiver }}</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="section">
+      <h2>Notify Party Details</h2>
+      <table>
+        <tr>
+          <th>Name</th>
+          <td>{{ notify_party }}</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="section">
+      <h2>Cargo Information</h2>
+      <table>
+        <tr>
+          <th>Description</th>
+          <td>{{ description_of_cargo }}</td>
+        </tr>
+        <tr>
+          <th>Quantity</th>
+          <td>{{ quantity }}</td>
+        </tr>
+        <tr>
+          <th>Destination</th>
+          <td>{{ destination }}</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="section">
+      <h2>Master Details</h2>
+      <table>
+        <tr>
+          <th>Name</th>
+          <td>{{ master }}</td>
+        </tr>
+      </table>
+    </div>
+
+
+  </body>
+</html>
